@@ -1,7 +1,6 @@
 {
   "name": "solana-lab-4",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,10 +8,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "@solana-developers/helpers": "^2.3.0",
     "@solana/spl-token": "^0.4.7",
     "@solana/web3.js": "^1.94.0",
-    "esrun": "^3.2.26"
+    "esrun": "^3.2.26",
+    "punycode": "^2.3.1"
   }
 }

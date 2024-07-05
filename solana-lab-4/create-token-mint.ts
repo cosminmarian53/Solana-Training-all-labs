@@ -9,6 +9,7 @@ import { Connection, clusterApiUrl } from "@solana/web3.js";
 const connection = new Connection(clusterApiUrl("devnet"));
 
 const user = getKeypairFromEnvironment("SECRET_KEY");
+
 const tokenMint = await createMint(connection, user, user.publicKey, null, 2);
 
 const link = getExplorerLink("address", tokenMint.toString(), "devnet");
