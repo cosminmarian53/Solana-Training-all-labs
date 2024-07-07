@@ -12,11 +12,11 @@ console.log(
 );
 
 // Add the recipient public key here
-const recipient = new PublicKey("Hxsgo2tPiu6967VUaEquk232riDKkaqK89wBvdSCgjH7");
+const recipient = new PublicKey("BnGZm5nFTAGBqJF9zGhporYvA4vTXHG1zfnMWJGXVuh");
 
 // Subtitute in your token mint account
 const tokenMintAccount = new PublicKey(
-  "4YKmfD83CMcC6SommUxGCSyyt8TtbmAFX3kmRmaa72i8"
+  "BWh7yKsxaAZGtjbKXvsyGgKgttKXYJkmBGKkEznWGqti"
 );
 // Our token has two decimal places
 const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 1);

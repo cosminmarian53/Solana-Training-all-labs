@@ -1,4 +1,3 @@
-// Imports
 import { getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
 import "dotenv/config";
 import {
@@ -6,20 +5,19 @@ import {
   getKeypairFromEnvironment,
 } from "@solana-developers/helpers";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
-
 const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
 const user = getKeypairFromEnvironment("SECRET_KEY");
 
 console.log(
-  `🎊 Loaded our keypair securely, using an env file! Our public key is: ${user.publicKey.toBase58()}`
+  ` Loaded our keypair securely, using an env file! Our public key is: ${user.publicKey.toBase58()}`
 );
-
+// Subtitute in your token mint account from create-token-mint.ts
 const tokenMintAccount = new PublicKey(
-  "4YKmfD83CMcC6SommUxGCSyyt8TtbmAFX3kmRmaa72i8"
+  "BWh7yKsxaAZGtjbKXvsyGgKgttKXYJkmBGKkEznWGqti"
 );
 
-const recipient = new PublicKey("Hxsgo2tPiu6967VUaEquk232riDKkaqK89wBvdSCgjH7");
+const recipient = new PublicKey("4g8QnwiSYFAXfXwitmA3KxBU6qc2eybqinXWoV2steWz");
 
 const tokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,

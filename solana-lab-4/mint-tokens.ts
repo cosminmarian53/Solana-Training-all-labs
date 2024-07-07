@@ -14,7 +14,7 @@ const user = getKeypairFromEnvironment("SECRET_KEY");
 
 // Substitute in your token mint account from create-token-mint.ts
 const tokenMintAccount = new PublicKey(
-  "4YKmfD83CMcC6SommUxGCSyyt8TtbmAFX3kmRmaa72i8"
+  "BWh7yKsxaAZGtjbKXvsyGgKgttKXYJkmBGKkEznWGqti"
 );
 
 // Let's mint the tokens to ourselves for now!
