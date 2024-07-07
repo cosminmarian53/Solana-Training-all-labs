@@ -1,40 +1,21 @@
 import "dotenv/config";
 import {
   Connection,
+  LAMPORTS_PER_SOL,
   PublicKey,
   clusterApiUrl,
-  LAMPORTS_PER_SOL,
-  Keypair,
 } from "@solana/web3.js";
 
-import bs58 from "bs58";
-async function checkBalance() {
-  // Connect to the Solana network
-  const connection = new Connection(clusterApiUrl("devnet"));
-  console.log("💘Connected to the devnet cluster");
+const connection = new Connection(clusterApiUrl("devnet"));
 
-  const publicKey = new PublicKey(
-    "8P6G7qy5P3FxzdXZRz9nSK5Gvy8bzVBhaBwn3cnaZkBT"
-  );
+console.log(`⚡ Connected to devnet`);
 
-  const keypair = Keypair.generate();
-  const privateKey = bs58.encode(keypair.secretKey);
+const publicKey = new PublicKey("4g8QnwiSYFAXfXwitmA3KxBU6qc2eybqinXWoV2steWz");
 
-  try {
-    // Get the balance of the account
-    const balance = await connection.getBalance(publicKey);
-    const solBalance = balance / LAMPORTS_PER_SOL;
-    console.log("🎉Successfully checked the balance");
-    // Print the balance
-    console.log(
-      `🤑Account balance for ${publicKey} in Lamports: ${balance} Lamports`
-    );
-    console.log(
-      `🍞Account balance for ${publicKey} in 💲SOL: ${solBalance} SOL`
-    );
-  } catch (error) {
-    console.error("😠Failed to check balance:", error);
-  }
-}
+const balanceInLamports = await connection.getBalance(publicKey);
 
-checkBalance();
+const balanceInSOL = balanceInLamports / LAMPORTS_PER_SOL;
+
+console.log(
+  `🤑 Finished! The balance for the wallet at address ${publicKey} is ${balanceInSOL}!`
+);
